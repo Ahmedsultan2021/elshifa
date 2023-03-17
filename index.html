@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+
+
+    <style>
+    body{
+      background-image: url('img/bg7.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+    </style>
+  </head>
+
+  <body>
+
+
+
+    <a href="index2.html">index2</a>
+    <a href="index3.html">index3</a>
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-4 col-md-7 co-sm-11 ">
+          <form action="#" class="mt-5 bg-dark p-5 text-white" method="get">
+            <div class="mb-3">
+              <label for="" class="form-label">Name</label>
+              <input  type="text" name="" id="Name" class="form-control" placeholder="" aria-describedby="helpId">
+              <small id="nameId" class="text-danger"></small>
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Email</label>
+              <input type="text" name="" id="Email" class="form-control" placeholder="" aria-describedby="helpId">
+              <small id="emailId" class="text-danger"></small>
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">password</label>
+              <input type="text" name="" id="password" class="form-control" placeholder="" aria-describedby="helpId">
+              <small id="passwordId" class="text-danger"></small>
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">confirmation password</label>
+              <input type="text" name="" id="Cpassword" class="form-control" placeholder="" aria-describedby="helpId">
+              <small id="helpId" class="text-danger"></small>
+            </div>
+            <button onclick="validation()" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    
+  
+
+
+
+
+    <script>
+
+
+      let namevalidatin = false;
+      let Emailvalidatin = false;
+      let passwordvalidatin = false;
+
+      function validation() {
+
+
+
+        document.getElementById("nameId").innerText = '';
+        document.getElementById("emailId").innerText = '';
+        document.getElementById("passwordId").innerText = '';
+
+
+
+
+        name = document.getElementById("Name").value;
+        Email = document.getElementById("Email").value;
+        password = document.getElementById("password").value;
+        Cpassword = document.getElementById("Cpassword").value;
+       
+        if (name.length<20 && name.length != 0) {
+         namevalidatin = true; 
+        }else{
+          document.getElementById("nameId").innerText = 'name error';
+        }
+        if (Email.search(".com")>0 && Email.length != 0) {
+         emailvalidatin = true; 
+        }else{
+          document.getElementById("emailId").innerText = 'email error';
+        }
+        if (password.length!=0 && Cpassword.length!=0 ) {
+          if (password == Cpassword ) {
+            emailvalidatin = true; 
+          }
+          else{
+
+            document.getElementById("passwordId").innerText = 'password not equal confirmation password';
+          }
+        }else{
+          document.getElementById("passwordId").innerText = 'neither password nor confirmation password are empty';
+        }
+
+
+        if (namevalidatin == true && emailvalidatin == true && passwordvalidatin == true) {
+          window.Location('index.html');
+        }
+      }
+
+
+    </script>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
